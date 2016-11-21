@@ -8,23 +8,41 @@
     <schema id="4" name="performance_schema" />
     <schema id="5" name="sys" />
     <table id="6" parent="1" name="student" />
-    <column id="7" parent="6" name="id">
+    <table id="7" parent="1" name="User" />
+    <column id="8" parent="6" name="id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="8" parent="6" name="name">
+    <column id="9" parent="6" name="name">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="9" parent="6" name="sex">
+    <column id="10" parent="6" name="sex">
       <data-type>varchar(4)|0</data-type>
     </column>
-    <column id="10" parent="6" name="birth">
+    <column id="11" parent="6" name="birth">
       <data-type>date|0</data-type>
     </column>
-    <column id="11" parent="6" name="department">
+    <column id="12" parent="6" name="department">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="12" parent="6" name="address">
+    <column id="13" parent="6" name="address">
       <data-type>varchar(50)|0</data-type>
     </column>
+    <column id="14" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="15" parent="7" name="pwd">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="16" parent="7" name="name">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="17" parent="7" name="contact">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <key id="18" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
   </database-model>
 </dataSource>

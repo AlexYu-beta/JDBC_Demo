@@ -15,22 +15,39 @@ public class DB_Util {
         //3.operate on the database
         Statement statement=connection.createStatement();
         //deletion
-        statement.execute("DELETE FROM student");
-        //*/
+        statement.execute("DELETE from DB_demo.student");
+        statement.execute("DELETE from DB_demo.User");//
         System.out.println("current state::");
-        ResultSet resultSet=statement.executeQuery("SELECT id,sex FROM student");
+        System.out.println("table student");
+        ResultSet resultSet=statement.executeQuery("SELECT id,sex FROM DB_demo.student");
         while(resultSet.next()){
             System.out.println(resultSet.getString("id")+","+resultSet.getString("sex"));
         }
-
+        System.out.println("table user");//
+        resultSet=statement.executeQuery("SELECT id,pwd,contact from DB_demo.User");//
+        while(resultSet.next()){//
+            System.out.println(resultSet.getString("id")+","+resultSet.getString("pwd")+","+resultSet.getString("contact"));//
+        }//
         //here is the insertion
-        statement.execute("INSERT into student(id,sex,address)VALUES('0000000001','male','City A') ");
-        statement.execute("INSERT into student(id,sex,address)VALUES('0000000002','male','City C') ");
-        statement.execute("INSERT into student(id,sex,address)VALUES('0000000003','fema','City B') ");
+        statement.execute("INSERT into DB_demo.student(id,sex,address)VALUES('0000000001','male','City A') ");
+        statement.execute("INSERT into DB_demo.student(id,sex,address)VALUES('0000000002','male','City C') ");
+        statement.execute("INSERT into DB_demo.student(id,sex,address)VALUES('0000000003','male','City B') ");
+
+        statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000001',AES_ENCRYPT('zxcvzxcv','key_pwd'),'alex','110')");//
+        statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000002',AES_ENCRYPT('asdfasdf','key_pwd'),'blex','10086')");//
+        statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000003',AES_ENCRYPT('qwerqwer','key_pwd'),'clex','12580')");//
         System.out.println("state after insertion");
-        resultSet=statement.executeQuery("SELECT id,sex FROM student");
+        System.out.println("table student");
+        resultSet=statement.executeQuery("SELECT id,sex FROM DB_demo.student");
         while(resultSet.next()){
             System.out.println(resultSet.getString("id")+","+resultSet.getString("sex"));
         }
+        System.out.println("table user");//
+        resultSet=statement.executeQuery("SELECT id,pwd,contact from DB_demo.User");//
+        //resultSet=statement.executeQuery("SELECT id,AES_DECRYPT(pwd,'key_pwd'),contact from DB_demo.User");//
+        while(resultSet.next()){//
+            System.out.println(resultSet.getString("id")+","+resultSet.getString("pwd")+","+resultSet.getString("contact"));//
+            //System.out.println(resultSet.getString("id")+","+resultSet.getString("AES_DECRYPT(pwd,'key_pwd')")+","+resultSet.getString("contact"));//
+        }//
     }
 }
