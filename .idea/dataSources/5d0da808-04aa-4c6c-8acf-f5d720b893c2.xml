@@ -7,40 +7,41 @@
     <schema id="3" name="mysql" />
     <schema id="4" name="performance_schema" />
     <schema id="5" name="sys" />
-    <table id="6" parent="1" name="student" />
-    <table id="7" parent="1" name="User" />
-    <column id="8" parent="6" name="id">
+    <schema id="6" name="DB_HBMS_Innovator" />
+    <table id="7" parent="1" name="student" />
+    <table id="8" parent="1" name="User" />
+    <column id="9" parent="7" name="id">
       <data-type>int(11)|0</data-type>
     </column>
-    <column id="9" parent="6" name="name">
+    <column id="10" parent="7" name="name">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="10" parent="6" name="sex">
+    <column id="11" parent="7" name="sex">
       <data-type>varchar(4)|0</data-type>
     </column>
-    <column id="11" parent="6" name="birth">
+    <column id="12" parent="7" name="birth">
       <data-type>date|0</data-type>
     </column>
-    <column id="12" parent="6" name="department">
+    <column id="13" parent="7" name="department">
       <data-type>varchar(20)|0</data-type>
     </column>
-    <column id="13" parent="6" name="address">
+    <column id="14" parent="7" name="address">
       <data-type>varchar(50)|0</data-type>
     </column>
-    <column id="14" parent="7" name="id">
+    <column id="15" parent="8" name="id">
       <mandatory>1</mandatory>
       <data-type>varchar(10)|0</data-type>
     </column>
-    <column id="15" parent="7" name="pwd">
+    <column id="16" parent="8" name="pwd">
       <data-type>varchar(30)|0</data-type>
     </column>
-    <column id="16" parent="7" name="name">
+    <column id="17" parent="8" name="name">
       <data-type>varchar(10)|0</data-type>
     </column>
-    <column id="17" parent="7" name="contact">
+    <column id="18" parent="8" name="contact">
       <data-type>varchar(10)|0</data-type>
     </column>
-    <key id="18" parent="7" name="PRIMARY">
+    <key id="19" parent="8" name="PRIMARY">
       <columns>id</columns>
       <primary>1</primary>
     </key>
