@@ -40,7 +40,7 @@ CREATE TABLE `Appeal` (
 
 LOCK TABLES `Appeal` WRITE;
 /*!40000 ALTER TABLE `Appeal` DISABLE KEYS */;
-INSERT INTO `Appeal` VALUES (1,'2016-11-26 15:10:13','0300000001','0100000001','I just cannot understand',0,1);
+INSERT INTO `Appeal` VALUES (1,'2016-11-26 18:00:01','0300000001','0100000001','I just cannot understand',0,1);
 /*!40000 ALTER TABLE `Appeal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,7 +54,7 @@ DROP TABLE IF EXISTS `CommentInfo`;
 CREATE TABLE `CommentInfo` (
   `commentID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `hotelID` varchar(10) DEFAULT NULL,
+  `hotelID` int(10) unsigned NOT NULL,
   `score` int(11) DEFAULT NULL,
   `comment` varchar(200) DEFAULT NULL,
   `picture1` varchar(50) DEFAULT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE `CommentInfo` (
 
 LOCK TABLES `CommentInfo` WRITE;
 /*!40000 ALTER TABLE `CommentInfo` DISABLE KEYS */;
-INSERT INTO `CommentInfo` VALUES (1,'2016-11-26 07:10:13','0001001001',5,'nice but noise','NOPIC','NOPIC','NOPIC');
+INSERT INTO `CommentInfo` VALUES (1,'2016-11-26 10:00:01',1,5,'nice but noise','NOPIC','NOPIC','NOPIC');
 /*!40000 ALTER TABLE `CommentInfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `CreditRecord` (
   `reasonType` tinyint(4) DEFAULT NULL,
   `amount` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`creditRecordID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,6 +98,7 @@ CREATE TABLE `CreditRecord` (
 
 LOCK TABLES `CreditRecord` WRITE;
 /*!40000 ALTER TABLE `CreditRecord` DISABLE KEYS */;
+INSERT INTO `CreditRecord` VALUES (1,'2016-11-26 10:00:01','0300000001',0,0,648);
 /*!40000 ALTER TABLE `CreditRecord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -109,18 +110,19 @@ DROP TABLE IF EXISTS `Hotel`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Hotel` (
-  `hotelID` varchar(10) DEFAULT NULL,
+  `hotelID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(30) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
-  `region` varchar(30) DEFAULT NULL,
+  `region` varchar(50) DEFAULT NULL,
   `introduction` varchar(200) DEFAULT NULL,
   `star` tinyint(4) DEFAULT NULL,
   `environment1` varchar(50) DEFAULT NULL,
   `environment2` varchar(50) DEFAULT NULL,
   `environment3` varchar(50) DEFAULT NULL,
   `facility` varchar(200) DEFAULT NULL,
-  `score` int(11) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `score` int(11) DEFAULT NULL,
+  PRIMARY KEY (`hotelID`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +131,7 @@ CREATE TABLE `Hotel` (
 
 LOCK TABLES `Hotel` WRITE;
 /*!40000 ALTER TABLE `Hotel` DISABLE KEYS */;
+INSERT INTO `Hotel` VALUES (1,'motel168','department 10, South Zhongshan Rd. ','Jiangsu/Nanjing/Xinjiekou','a lovely hotel far away from peace',4,'NOPIC','NOPIC','NOPIC','basically equipped',5);
 /*!40000 ALTER TABLE `Hotel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -141,7 +144,7 @@ DROP TABLE IF EXISTS `HotelPromotion`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `HotelPromotion` (
   `hotelPromotionID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `hotelID` varchar(10) DEFAULT NULL,
+  `hotelID` int(10) unsigned NOT NULL,
   `name` varchar(30) DEFAULT NULL,
   `content` varchar(200) DEFAULT NULL,
   `startDate` date DEFAULT NULL,
@@ -149,7 +152,7 @@ CREATE TABLE `HotelPromotion` (
   `minRankAvailable` int(11) DEFAULT NULL,
   `maxRankAvailable` int(11) DEFAULT NULL,
   PRIMARY KEY (`hotelPromotionID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -158,6 +161,7 @@ CREATE TABLE `HotelPromotion` (
 
 LOCK TABLES `HotelPromotion` WRITE;
 /*!40000 ALTER TABLE `HotelPromotion` DISABLE KEYS */;
+INSERT INTO `HotelPromotion` VALUES (1,1,'double 11 promotion','50% off!!!','2016-11-26','2017-11-10',1,100);
 /*!40000 ALTER TABLE `HotelPromotion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -173,7 +177,7 @@ CREATE TABLE `OrderList` (
   `generateTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `cancelTime` datetime DEFAULT NULL,
   `executeDDL` datetime DEFAULT NULL,
-  `hotelID` varchar(10) DEFAULT NULL,
+  `hotelID` int(10) unsigned NOT NULL,
   `orderState` tinyint(4) DEFAULT NULL,
   `checkinTime` datetime DEFAULT NULL,
   `checkoutTime` datetime DEFAULT NULL,
@@ -181,7 +185,7 @@ CREATE TABLE `OrderList` (
   `hasChild` tinyint(4) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`orderID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -190,6 +194,7 @@ CREATE TABLE `OrderList` (
 
 LOCK TABLES `OrderList` WRITE;
 /*!40000 ALTER TABLE `OrderList` DISABLE KEYS */;
+INSERT INTO `OrderList` VALUES (1,'2016-11-26 10:00:01',NULL,'2017-01-01 18:00:00',1,0,NULL,NULL,2,0,328);
 /*!40000 ALTER TABLE `OrderList` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -202,7 +207,7 @@ DROP TABLE IF EXISTS `RoomInfo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `RoomInfo` (
   `roomintoID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `hotelID` varchar(10) DEFAULT NULL,
+  `hotelID` int(10) unsigned NOT NULL,
   `roomID` varchar(10) DEFAULT NULL,
   `roomType` varchar(30) DEFAULT NULL,
   `roomPrice` int(11) DEFAULT NULL,
@@ -240,7 +245,7 @@ CREATE TABLE `User` (
   `memberType` tinyint(4) DEFAULT NULL,
   `memberInfo` varchar(30) DEFAULT NULL,
   `rank` smallint(6) DEFAULT NULL,
-  `hotelID` varchar(10) DEFAULT NULL,
+  `hotelID` int(10) unsigned NOT NULL,
   `workID` varchar(30) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -293,4 +298,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-26 15:18:57
+-- Dump completed on 2016-11-26 18:02:40
