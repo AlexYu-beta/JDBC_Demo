@@ -309,7 +309,7 @@ public class DB_Util_2 {
     public static void main(String args[])throws Exception{
         ///* Uncomment the following lines of code in DB_Util2
         testIndividually();
-        //reestablishment();
+        reestablishment();
         //*/
         /* Uncomment the following lines of code in DB_Util3 to show the result
         showAll();
