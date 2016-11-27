@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.15, for Linux (x86_64)
 --
--- Host: localhost    Database: DB_HBMS_Innovator
+-- Host: localhost    Database: DB_HBMS_INNOVATOR
 -- ------------------------------------------------------
 -- Server version	5.7.13-0ubuntu0.16.04.2
 
@@ -24,14 +24,14 @@ DROP TABLE IF EXISTS `Appeal`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Appeal` (
   `appealID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `appealTime` datetime DEFAULT NULL,
+  `appealTime` datetime DEFAULT '2000-01-01 00:00:00',
   `userID` varchar(10) DEFAULT NULL,
   `webMarketerID` varchar(10) DEFAULT NULL,
   `content` varchar(200) DEFAULT NULL,
   `appealState` tinyint(4) DEFAULT NULL,
-  `orderID` int(10) unsigned NOT NULL,
+  `orderID` int(11) DEFAULT NULL,
   PRIMARY KEY (`appealID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `Appeal` (
 
 LOCK TABLES `Appeal` WRITE;
 /*!40000 ALTER TABLE `Appeal` DISABLE KEYS */;
-INSERT INTO `Appeal` VALUES (1,'2016-11-27 14:13:26','0300000001','0100000001','I just cannot understand',0,1);
+INSERT INTO `Appeal` VALUES (1,'2016-11-27 23:14:22','0300000001','0100000001','I just cannot understand',0,1);
 /*!40000 ALTER TABLE `Appeal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -61,7 +61,7 @@ CREATE TABLE `CommentInfo` (
   `picture2` varchar(50) DEFAULT NULL,
   `picture3` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`commentID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,7 +70,7 @@ CREATE TABLE `CommentInfo` (
 
 LOCK TABLES `CommentInfo` WRITE;
 /*!40000 ALTER TABLE `CommentInfo` DISABLE KEYS */;
-INSERT INTO `CommentInfo` VALUES (1,'2016-11-27 06:13:26',1,5,'nice but noise','NOPIC','NOPIC','NOPIC');
+INSERT INTO `CommentInfo` VALUES (1,'2016-11-27 15:14:22',1,5,'nice but noise','NOPIC','NOPIC','NOPIC');
 /*!40000 ALTER TABLE `CommentInfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `CreditRecord` (
   `reasonType` tinyint(4) DEFAULT NULL,
   `amount` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`creditRecordID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -98,7 +98,7 @@ CREATE TABLE `CreditRecord` (
 
 LOCK TABLES `CreditRecord` WRITE;
 /*!40000 ALTER TABLE `CreditRecord` DISABLE KEYS */;
-INSERT INTO `CreditRecord` VALUES (1,'2016-11-27 06:13:26','0300000001',0,0,648);
+INSERT INTO `CreditRecord` VALUES (1,'2016-11-27 15:14:22','0300000001',0,0,648);
 /*!40000 ALTER TABLE `CreditRecord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,9 +111,9 @@ DROP TABLE IF EXISTS `Hotel`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Hotel` (
   `hotelID` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(30) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `address` varchar(50) DEFAULT NULL,
-  `region` varchar(50) DEFAULT NULL,
+  `region` int(10) unsigned NOT NULL,
   `introduction` varchar(200) DEFAULT NULL,
   `star` tinyint(4) DEFAULT NULL,
   `environment1` varchar(50) DEFAULT NULL,
@@ -122,7 +122,7 @@ CREATE TABLE `Hotel` (
   `facility` varchar(200) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   PRIMARY KEY (`hotelID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -131,7 +131,7 @@ CREATE TABLE `Hotel` (
 
 LOCK TABLES `Hotel` WRITE;
 /*!40000 ALTER TABLE `Hotel` DISABLE KEYS */;
-INSERT INTO `Hotel` VALUES (1,'motel168','department 10, South Zhongshan Rd. ','Jiangsu/Nanjing/Xinjiekou','a lovely hotel far away from peace',4,'NOPIC','NOPIC','NOPIC','basically equipped',5);
+INSERT INTO `Hotel` VALUES (1,'motel168','department 10, South Zhongshan Rd. ',1,'a lovely hotel far away from peace',4,'NOPIC','NOPIC','NOPIC','basically equipped',5);
 /*!40000 ALTER TABLE `Hotel` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,13 +146,13 @@ CREATE TABLE `HotelPromotion` (
   `hotelPromotionID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `hotelID` int(10) unsigned NOT NULL,
   `name` varchar(30) DEFAULT NULL,
-  `content` varchar(200) DEFAULT NULL,
-  `startDate` date DEFAULT NULL,
-  `endDate` date DEFAULT NULL,
-  `minRankAvailable` int(11) DEFAULT NULL,
-  `maxRankAvailable` int(11) DEFAULT NULL,
+  `content` varchar(30) DEFAULT NULL,
+  `startDate` date DEFAULT '2000-01-01',
+  `endDate` date DEFAULT '2030-01-01',
+  `minRankAvailable` int(11) DEFAULT '1',
+  `maxRankAvailable` int(11) DEFAULT '10',
   PRIMARY KEY (`hotelPromotionID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +185,7 @@ CREATE TABLE `OrderList` (
   `hasChild` tinyint(4) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   PRIMARY KEY (`orderID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -194,8 +194,34 @@ CREATE TABLE `OrderList` (
 
 LOCK TABLES `OrderList` WRITE;
 /*!40000 ALTER TABLE `OrderList` DISABLE KEYS */;
-INSERT INTO `OrderList` VALUES (1,'2016-11-27 06:13:26',NULL,'2017-01-01 18:00:00',1,0,NULL,NULL,2,0,328);
+INSERT INTO `OrderList` VALUES (1,'2016-11-27 15:14:22',NULL,'2017-01-01 18:00:00',1,0,NULL,NULL,2,0,328);
 /*!40000 ALTER TABLE `OrderList` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Region`
+--
+
+DROP TABLE IF EXISTS `Region`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Region` (
+  `regionID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `province` varchar(30) DEFAULT NULL,
+  `town` varchar(30) DEFAULT NULL,
+  `regionName` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`regionID`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Region`
+--
+
+LOCK TABLES `Region` WRITE;
+/*!40000 ALTER TABLE `Region` DISABLE KEYS */;
+INSERT INTO `Region` VALUES (1,'Jiangsu','Nanjing','Xinjiekou');
+/*!40000 ALTER TABLE `Region` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -215,7 +241,7 @@ CREATE TABLE `RoomInfo` (
   `detailedInfo1` datetime DEFAULT NULL,
   `detailedInfo2` datetime DEFAULT NULL,
   PRIMARY KEY (`roomInfoID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,9 +263,9 @@ DROP TABLE IF EXISTS `User`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `User` (
   `userID` varchar(10) DEFAULT NULL,
-  `accountName` varchar(30) DEFAULT NULL,
+  `accountName` varchar(30) DEFAULT 'User',
   `password` varchar(30) DEFAULT NULL,
-  `name` varchar(30) DEFAULT NULL,
+  `name` varchar(30) DEFAULT 'User',
   `contact` varchar(30) DEFAULT NULL,
   `portrait` varchar(50) DEFAULT NULL,
   `creditValue` bigint(20) DEFAULT NULL,
@@ -248,7 +274,7 @@ CREATE TABLE `User` (
   `rank` smallint(6) DEFAULT NULL,
   `hotelID` int(10) unsigned NOT NULL,
   `workID` varchar(30) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -273,13 +299,13 @@ CREATE TABLE `WebPromotion` (
   `webPromotionType` tinyint(4) DEFAULT NULL,
   `name` varchar(30) DEFAULT NULL,
   `content` varchar(200) DEFAULT NULL,
-  `startDate` date DEFAULT NULL,
-  `endDate` date DEFAULT NULL,
-  `minRankAvailable` int(11) DEFAULT NULL,
-  `maxRankAvailable` int(11) DEFAULT NULL,
-  `regionAvailableList` varchar(3003) DEFAULT NULL,
+  `startDate` date DEFAULT '2000-01-01',
+  `endDate` date DEFAULT '2050-01-01',
+  `minRankAvailable` int(11) DEFAULT '1',
+  `maxRankAvailable` int(11) DEFAULT '10',
+  `regionAvailableList` varchar(3003) DEFAULT '000',
   PRIMARY KEY (`webPromotionID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -301,4 +327,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-27 14:27:04
+-- Dump completed on 2016-11-27 23:15:46
