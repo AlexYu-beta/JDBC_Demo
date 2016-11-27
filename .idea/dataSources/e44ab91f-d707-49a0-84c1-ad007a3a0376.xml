@@ -216,7 +216,7 @@
       <columns>orderID</columns>
       <primary>1</primary>
     </key>
-    <column id="73" parent="13" name="roomintoID">
+    <column id="73" parent="13" name="roomInfoID">
       <mandatory>1</mandatory>
       <data-type>int(10) unsigned|0</data-type>
       <sequence-identity>1</sequence-identity>
@@ -244,7 +244,7 @@
       <data-type>datetime|0</data-type>
     </column>
     <key id="81" parent="13" name="PRIMARY">
-      <columns>roomintoID</columns>
+      <columns>roomInfoID</columns>
       <primary>1</primary>
     </key>
     <column id="82" parent="14" name="userID">

@@ -40,7 +40,7 @@ CREATE TABLE `Appeal` (
 
 LOCK TABLES `Appeal` WRITE;
 /*!40000 ALTER TABLE `Appeal` DISABLE KEYS */;
-INSERT INTO `Appeal` VALUES (1,'2016-11-26 18:00:01','0300000001','0100000001','I just cannot understand',0,1);
+INSERT INTO `Appeal` VALUES (1,'2016-11-27 14:13:26','0300000001','0100000001','I just cannot understand',0,1);
 /*!40000 ALTER TABLE `Appeal` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -70,7 +70,7 @@ CREATE TABLE `CommentInfo` (
 
 LOCK TABLES `CommentInfo` WRITE;
 /*!40000 ALTER TABLE `CommentInfo` DISABLE KEYS */;
-INSERT INTO `CommentInfo` VALUES (1,'2016-11-26 10:00:01',1,5,'nice but noise','NOPIC','NOPIC','NOPIC');
+INSERT INTO `CommentInfo` VALUES (1,'2016-11-27 06:13:26',1,5,'nice but noise','NOPIC','NOPIC','NOPIC');
 /*!40000 ALTER TABLE `CommentInfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -98,7 +98,7 @@ CREATE TABLE `CreditRecord` (
 
 LOCK TABLES `CreditRecord` WRITE;
 /*!40000 ALTER TABLE `CreditRecord` DISABLE KEYS */;
-INSERT INTO `CreditRecord` VALUES (1,'2016-11-26 10:00:01','0300000001',0,0,648);
+INSERT INTO `CreditRecord` VALUES (1,'2016-11-27 06:13:26','0300000001',0,0,648);
 /*!40000 ALTER TABLE `CreditRecord` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -161,7 +161,7 @@ CREATE TABLE `HotelPromotion` (
 
 LOCK TABLES `HotelPromotion` WRITE;
 /*!40000 ALTER TABLE `HotelPromotion` DISABLE KEYS */;
-INSERT INTO `HotelPromotion` VALUES (1,1,'double 11 promotion','50% off!!!','2016-11-26','2017-11-10',1,100);
+INSERT INTO `HotelPromotion` VALUES (1,1,'double 11 promotion','50% off!!!','2016-11-27','2017-11-10',1,100);
 /*!40000 ALTER TABLE `HotelPromotion` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -194,7 +194,7 @@ CREATE TABLE `OrderList` (
 
 LOCK TABLES `OrderList` WRITE;
 /*!40000 ALTER TABLE `OrderList` DISABLE KEYS */;
-INSERT INTO `OrderList` VALUES (1,'2016-11-26 10:00:01',NULL,'2017-01-01 18:00:00',1,0,NULL,NULL,2,0,328);
+INSERT INTO `OrderList` VALUES (1,'2016-11-27 06:13:26',NULL,'2017-01-01 18:00:00',1,0,NULL,NULL,2,0,328);
 /*!40000 ALTER TABLE `OrderList` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +206,7 @@ DROP TABLE IF EXISTS `RoomInfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `RoomInfo` (
-  `roomintoID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `roomInfoID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `hotelID` int(10) unsigned NOT NULL,
   `roomID` varchar(10) DEFAULT NULL,
   `roomType` varchar(30) DEFAULT NULL,
@@ -214,8 +214,8 @@ CREATE TABLE `RoomInfo` (
   `roomState` tinyint(4) DEFAULT NULL,
   `detailedInfo1` datetime DEFAULT NULL,
   `detailedInfo2` datetime DEFAULT NULL,
-  PRIMARY KEY (`roomintoID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  PRIMARY KEY (`roomInfoID`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -224,6 +224,7 @@ CREATE TABLE `RoomInfo` (
 
 LOCK TABLES `RoomInfo` WRITE;
 /*!40000 ALTER TABLE `RoomInfo` DISABLE KEYS */;
+INSERT INTO `RoomInfo` VALUES (1,1,'3B348','palace',648,0,NULL,NULL);
 /*!40000 ALTER TABLE `RoomInfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,6 +257,7 @@ CREATE TABLE `User` (
 
 LOCK TABLES `User` WRITE;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
+INSERT INTO `User` VALUES ('0000000001','alex2097','123','Alex Yu','10086','NOPIC',NULL,NULL,NULL,NULL,0,'0001'),('0100000001','alex2096','123','Alex Chen','110','NOPIC',NULL,NULL,NULL,NULL,0,'0001'),('0200000001','alex2095','123','Alex Shi','510','NOPIC',NULL,NULL,NULL,NULL,1,'0001'),('0300000001','alex2094','123','Alex Yu','272','NOPIC',10000,1,'1996-09-30',98,0,NULL);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,7 +279,7 @@ CREATE TABLE `WebPromotion` (
   `maxRankAvailable` int(11) DEFAULT NULL,
   `regionAvailableList` varchar(3003) DEFAULT NULL,
   PRIMARY KEY (`webPromotionID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -286,6 +288,7 @@ CREATE TABLE `WebPromotion` (
 
 LOCK TABLES `WebPromotion` WRITE;
 /*!40000 ALTER TABLE `WebPromotion` DISABLE KEYS */;
+INSERT INTO `WebPromotion` VALUES (1,0,'double 11 promotion','50% off!!!','2016-11-27','2017-11-10',1,100,'003001002003');
 /*!40000 ALTER TABLE `WebPromotion` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -298,4 +301,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-26 18:02:40
+-- Dump completed on 2016-11-27 14:27:04

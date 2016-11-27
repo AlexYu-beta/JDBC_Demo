@@ -36,6 +36,8 @@ public class DB_Util_2 {
         statement.execute("ALTER TABLE DB_HBMS_Innovator.Hotel AUTO_INCREMENT = 1");
         statement.execute("ALTER TABLE DB_HBMS_Innovator.HotelPromotion AUTO_INCREMENT = 1");
         statement.execute("ALTER TABLE DB_HBMS_Innovator.OrderList AUTO_INCREMENT = 1");
+        statement.execute("ALTER TABLE DB_HBMS_Innovator.RoomInfo AUTO_INCREMENT = 1");
+        statement.execute("ALTER TABLE DB_HBMS_Innovator.WebPromotion AUTO_INCREMENT = 1");
     }
 
     static void showAppeal() throws Exception{
@@ -132,7 +134,60 @@ public class DB_Util_2 {
             System.out.print(resultSet.getString("checkoutTime")+"::");
             System.out.print(resultSet.getString("number")+"::");
             System.out.print(resultSet.getString("hasChild")+"::");
-            System.out.print(resultSet.getString("price")+"::");
+            System.out.println(resultSet.getString("price"));
+        }
+        System.out.println();
+    }
+
+    static void showRoomInfo() throws Exception{
+        System.out.println();
+        ResultSet resultSet=statement.executeQuery("SELECT * FROM DB_HBMS_Innovator.RoomInfo");
+        while(resultSet.next()){
+            System.out.print(resultSet.getString("roomInfoID")+"::");
+            System.out.print(resultSet.getString("hotelID")+"::");
+            System.out.print(resultSet.getString("roomID")+"::");
+            System.out.print(resultSet.getString("roomType")+"::");
+            System.out.print(resultSet.getString("roomPrice")+"::");
+            System.out.print(resultSet.getString("roomState")+"::");
+            System.out.print(resultSet.getString("detailedInfo1")+"::");
+            System.out.println(resultSet.getString("detailedInfo2"));
+        }
+        System.out.println();
+    }
+
+    static void showUser()throws Exception{
+        System.out.println();
+        ResultSet resultSet=statement.executeQuery("SELECT * FROM DB_HBMS_Innovator.User");
+        while(resultSet.next()){
+            System.out.print(resultSet.getString("userID")+"::");
+            System.out.print(resultSet.getString("accountName")+"::");
+            System.out.print(resultSet.getString("password")+"::");
+            System.out.print(resultSet.getString("name")+"::");
+            System.out.print(resultSet.getString("contact")+"::");
+            System.out.print(resultSet.getString("portrait")+"::");
+            System.out.print(resultSet.getString("creditValue")+"::");
+            System.out.print(resultSet.getString("memberType")+"::");
+            System.out.print(resultSet.getString("memberInfo")+"::");
+            System.out.print(resultSet.getString("rank")+"::");
+            System.out.print(resultSet.getString("hotelID")+"::");
+            System.out.println(resultSet.getString("workID"));
+        }
+        System.out.println();
+    }
+
+    static void showWebPromotion() throws Exception{
+        System.out.println();
+        ResultSet resultSet=statement.executeQuery("SELECT * FROM DB_HBMS_Innovator.WebPromotion");
+        while(resultSet.next()){
+            System.out.print(resultSet.getString("webPromotionID")+"::");
+            System.out.print(resultSet.getString("webPromotionType")+"::");
+            System.out.print(resultSet.getString("name")+"::");
+            System.out.print(resultSet.getString("content")+"::");
+            System.out.print(resultSet.getString("startDate")+"::");
+            System.out.print(resultSet.getString("endDate")+"::");
+            System.out.print(resultSet.getString("minRankAvailable")+"::");
+            System.out.print(resultSet.getString("maxRankAvailable")+"::");
+            System.out.println(resultSet.getString("regionAvailableList"));
         }
         System.out.println();
     }
@@ -190,5 +245,26 @@ public class DB_Util_2 {
         statement.execute(sentence);
         System.out.println("testing OrderList individually");
         showOrderList();
+        //initialization of a roominfo individually
+        sentence="INSERT into DB_HBMS_Innovator.RoomInfo(hotelID, roomID, roomType, roomPrice, roomState, detailedInfo1, detailedInfo2)" +
+                "VALUES('1','3B348','palace',648,0,NULL,NULL)";
+        statement.execute(sentence);
+        System.out.println("testing RoomInfo individually");
+        showRoomInfo();
+        //initialization of a user individually
+        sentence="INSERT into DB_HBMS_Innovator.User(userID, accountName, password, name, contact, portrait, creditValue, memberType, memberInfo, rank, hotelID, workID)";
+        statement.execute(sentence+"VALUES('0000000001','alex2097','123','Alex Yu','10086','NOPIC',NULL,NULL,NULL,NULL,0,'0001')");
+        statement.execute(sentence+"VALUES('0100000001','alex2096','123','Alex Chen','110','NOPIC',NULL,NULL,NULL,NULL,0,'0001')");
+        statement.execute(sentence+"VALUES('0200000001','alex2095','123','Alex Shi','510','NOPIC',NULL,NULL,NULL,NULL,1,'0001')");
+        statement.execute(sentence+"VALUES('0300000001','alex2094','123','Alex Yu','272','NOPIC',10000,1,'1996-09-30',98,0,NULL)");
+        System.out.println("testing user individually");
+        showUser();
+        //initialization of a web promotion individually
+        currentTime=format2.format(new Date());
+        sentence="INSERT into DB_HBMS_Innovator.WebPromotion(webPromotionType, name, content, startDate, endDate, minRankAvailable, maxRankAvailable, regionAvailableList)" +
+                "VALUES(0,'double 11 promotion','50% off!!!','"+currentTime+"','2017-11-10',1,100,'003001002003')";
+        statement.execute(sentence);
+        System.out.println("testing web promotion individually");
+        showWebPromotion();
     }
 }

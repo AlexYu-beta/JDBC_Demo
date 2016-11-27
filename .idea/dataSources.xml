@@ -15,7 +15,7 @@
         <property name="yearIsDateType" value="false" />
       </driver-properties>
     </data-source>
-    <data-source source="LOCAL" name="MySQL - DB_HBMS_Innovator@localhost" uuid="79f6e45c-a2cb-4590-8416-9dc7989f1b6b">
+    <data-source source="LOCAL" name="MySQL - DB_HBMS_Innovator@localhost" uuid="e44ab91f-d707-49a0-84c1-ad007a3a0376">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
