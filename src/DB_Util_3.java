@@ -56,8 +56,6 @@ public class DB_Util_3 {
         statement.execute("INSERT into DB_HBMS_INNOVATOR.Region(province, town, regionName)" +
                 "VALUES('上海','上海','陆家嘴')");
         statement.execute("INSERT into DB_HBMS_INNOVATOR.Region(province, town, regionName)" +
-                "VALUES('上海','上海','陆家嘴')");
-        statement.execute("INSERT into DB_HBMS_INNOVATOR.Region(province, town, regionName)" +
                 "VALUES('浙江','杭州','武林')");
         statement.execute("INSERT into DB_HBMS_INNOVATOR.Region(province, town, regionName)" +
                 "VALUES('浙江','杭州','湖滨')");
@@ -120,6 +118,182 @@ public class DB_Util_3 {
     }
 
     static void initHotel() throws Exception{
+        String sentence="INSERT into DB_HBMS_INNOVATOR.Hotel(name, address, region, introduction, star, environment1, environment2, environment3, facility, score)";
+        //
+        statement.execute(sentence + "VALUES ('如家连锁酒店','13 Nanjing Rd.',1,'a very expensive hotel',3,'NOPIC','NOPIC','NOPIC','feel like living in your own home, but a little bit noisy',3)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Nanjing Rd.',1,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Nanjing Rd.',1,'a holy-expensive hotel, built in 1900',5,'NOPIC','NOPIC','NOPIC','we call it royal, what else can you imagine?',5)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','1 Yunnan Rd.',1,'a fundamentally equipped hotel, and the service is of standard',2,'NOPIC','NOPIC','NOPIC','basically equipped, standardized service provided',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',2,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',2,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',2,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',2,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('希尔顿酒店','6610 W. Nanjing Rd.',3,'a holy-expensive hotel, never try without a moderate wallet',5,'NOPIC','NOPIC','NOPIC','maybe the most fantastic furnish in Shanghai',4)");
+        statement.execute(sentence + "VALUES ('汉庭连锁酒店','800 W. Nanjing Rd.',3,'a very cheap chain hotel',2,'NOPIC','NOPIC','NOPIC','best choice for tourists from nearby cities',5)");
+        //allow me repeat in the next lines;
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',4,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',4,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',4,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',4,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','100 Tianyaoqiao Rd.',5,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',5,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',5,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',5,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('速８连锁酒店','100 Tianyaoqiao Rd.',6,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',6,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',6,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',6,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',7,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',7,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',7,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',7,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',8,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',8,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',8,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',8,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',9,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',9,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',9,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',9,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',10,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',10,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',10,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',10,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+        //
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','100 Tianyaoqiao Rd.',11,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',11,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',11,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',11,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('速８连锁酒店','100 Tianyaoqiao Rd.',12,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',5)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',12,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',12,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',12,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',13,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',13,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',13,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',5)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',13,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',14,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',14,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',14,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',14,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',15,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',15,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',15,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',15,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',16,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',16,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',16,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',16,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','100 Tianyaoqiao Rd.',17,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',17,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',17,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',17,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('速８连锁酒店','100 Tianyaoqiao Rd.',18,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',18,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',18,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',18,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',19,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',5)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',19,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',19,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',19,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',20,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',20,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',20,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',20,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',21,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',21,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',21,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',21,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',22,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',22,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',22,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',22,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+        //
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','100 Tianyaoqiao Rd.',23,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',23,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',23,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',23,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('速８连锁酒店','100 Tianyaoqiao Rd.',24,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',24,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',24,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',24,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',25,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',5)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',25,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',25,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',25,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',26,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',26,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',26,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',26,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',27,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',3)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',27,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',27,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',27,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+//
+        statement.execute(sentence + "VALUES ('速８连锁酒店','100 Tianyaoqiao Rd.',28,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',5)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',28,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',28,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',3)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',28,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',3)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',29,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',5)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',29,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',29,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',29,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',30,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',30,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',30,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',30,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',31,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',31,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',31,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',5)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',31,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',32,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',5)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',32,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',32,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',32,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','100 Tianyaoqiao Rd.',33,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',3)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',33,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('速８连锁酒店','123 S. Wanping Rd.',33,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',33,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',4)");
+        //
+        statement.execute(sentence + "VALUES ('速８连锁酒店','100 Tianyaoqiao Rd.',34,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('君悦大酒店','648 Tianyaoqiao Rd.',34,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',34,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','120 Zhaojiabang Rd.',34,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',5)");
+        //
+        statement.execute(sentence + "VALUES ('７天连锁酒店','100 Tianyaoqiao Rd.',35,'a secret garden hidden inside of the downtown',3,'NOPIC','NOPIC','NOPIC','environment is not good',2)");
+        statement.execute(sentence + "VALUES ('希尔顿酒店','648 Tianyaoqiao Rd.',35,'a holy-expensive hotel, built in 2016, symbolize the life of the rich',5,'NOPIC','NOPIC','NOPIC','everything is perfect except the traffic',4)");
+        statement.execute(sentence + "VALUES ('格林豪泰连锁酒店','123 S. Wanping Rd.',35,'a very cheap chain hotel',3,'NOPIC','NOPIC','NOPIC','maybe the service here is better than other chains',4)");
+        statement.execute(sentence + "VALUES ('７天连锁酒店','120 Zhaojiabang Rd.',35,'a very cheap hotel',3,'NOPIC','NOPIC','NOPIC','good enough, but a little bit noisy',3)");
+
+
 
     }
 
