@@ -419,8 +419,42 @@ public class DB_Util_3 {
     }
 
     static void initUser() throws Exception{
+        String sentence="INSERT into DB_HBMS_INNOVATOR.user(userID, accountName, password, name, contact, portrait, creditValue, memberType, memberInfo, rank, hotelID, workID) ";
         //initiating 4 web managers
-
+        statement.execute(sentence+"VALUES('0000000001','Alex2097','123','Alex Yu','68888888',null,0,null,null,null,null,'001')");
+        statement.execute(sentence+"VALUES('0000000003','Tim1001','123','Tim He','68888881',null,0,null,null,null,null,'002')");
+        statement.execute(sentence+"VALUES('0000000007','Betty11','123','Betty Liu','68882888',null,0,null,null,null,null,'003')");
+        statement.execute(sentence+"VALUES('0000000010','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'014')");
+        //initiating 2 web marketers
+        statement.execute(sentence+"VALUES('0100000001','Luke','1234','Luke','61838488',null,0,null,null,null,null,'015')");
+        statement.execute(sentence+"VALUES('0100000019','Luke1','1234','Luke Nog','68833888',null,0,null,null,null,null,'019')");
+        //initiating 10 hotel staffs
+        statement.execute(sentence+"VALUES('0200000011','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200000012','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200000013','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200001000','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200001001','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200002048','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200000999','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200000077','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200000016','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('0200000018','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        //initiating 15 users
+        statement.execute(sentence+"VALUES('1200000011','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('2500000012','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('3300000013','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('1240001000','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('4444001001','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('2220000011','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('6600000012','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('8800000013','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('6000710600','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('2023401001','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('1234000011','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('2003040012','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('7522000013','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('6200231000','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
+        statement.execute(sentence+"VALUES('9200001001','Eryuding1998','123','丁二玉','68838888',null,0,null,null,null,null,'010')");
     }
 
     static void initAll() throws Exception{
