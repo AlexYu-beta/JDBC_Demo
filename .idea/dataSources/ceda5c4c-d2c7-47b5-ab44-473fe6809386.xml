@@ -1,0 +1,49 @@
+<dataSource name="MySQL - DB_demo@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="DB_demo">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="hbmsdatabase" />
+    <schema id="3" name="information_schema" />
+    <schema id="4" name="mysql" />
+    <schema id="5" name="performance_schema" />
+    <schema id="6" name="sys" />
+    <table id="7" parent="1" name="User" />
+    <table id="8" parent="1" name="student" />
+    <column id="9" parent="7" name="id">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="10" parent="7" name="pwd">
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="11" parent="7" name="name">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="12" parent="7" name="contact">
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <key id="13" parent="7" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="14" parent="8" name="id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="15" parent="8" name="name">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="16" parent="8" name="sex">
+      <data-type>varchar(4)|0</data-type>
+    </column>
+    <column id="17" parent="8" name="birth">
+      <data-type>date|0</data-type>
+    </column>
+    <column id="18" parent="8" name="department">
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="19" parent="8" name="address">
+      <data-type>varchar(50)|0</data-type>
+    </column>
+  </database-model>
+</dataSource>

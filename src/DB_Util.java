@@ -32,9 +32,9 @@ public class DB_Util {
         statement.execute("INSERT into DB_demo.student(id,sex,address)VALUES('0000000001','male','City A') ");
         statement.execute("INSERT into DB_demo.student(id,sex,address)VALUES('0000000002','male','City C') ");
         statement.execute("INSERT into DB_demo.student(id,sex,address)VALUES('0000000003','male','City B') ");
-
+        String pwd="asdfasdf";
         statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000001',AES_ENCRYPT('zxcvzxcv','key_pwd'),'alex','110')");//
-        statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000002',AES_ENCRYPT('asdfasdf','key_pwd'),'blex','10086')");//
+        statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000002',AES_ENCRYPT('"+pwd+"','key_pwd'),'blex','10086')");//
         statement.execute("INSERT into DB_demo.User(id,pwd,name,contact)VALUES('0000000003',AES_ENCRYPT('qwerqwer','key_pwd'),'clex','12580')");//
         System.out.println("state after insertion");
         System.out.println("table student");
