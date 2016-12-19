@@ -43,11 +43,11 @@ public class DB_Util {
             System.out.println(resultSet.getString("id")+","+resultSet.getString("sex"));
         }
         System.out.println("table user");//
-        resultSet=statement.executeQuery("SELECT id,pwd,contact from DB_demo.User");//
-        //resultSet=statement.executeQuery("SELECT id,AES_DECRYPT(pwd,'key_pwd'),contact from DB_demo.User");//
+        //resultSet=statement.executeQuery("SELECT id,pwd,contact from DB_demo.User");//
+        resultSet=statement.executeQuery("SELECT id,AES_DECRYPT(pwd,'key_pwd'),contact from DB_demo.User");//
         while(resultSet.next()){//
-            System.out.println(resultSet.getString("id")+","+resultSet.getString("pwd")+","+resultSet.getString("contact"));//
-            //System.out.println(resultSet.getString("id")+","+resultSet.getString("AES_DECRYPT(pwd,'key_pwd')")+","+resultSet.getString("contact"));//
+            //System.out.println(resultSet.getString("id")+","+resultSet.getString("pwd")+","+resultSet.getString("contact"));//
+            System.out.println(resultSet.getString("id")+","+resultSet.getString("AES_DECRYPT(pwd,'key_pwd')")+","+resultSet.getString("contact"));//
         }//
     }
 }
